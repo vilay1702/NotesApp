@@ -1,0 +1,85 @@
+/* ========================= Global ========================= */
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    /* font-family: 'Source Code Pro', monospace;
+    font-family: 'Ubuntu', sans-serif; */
+}
+
+.container{
+    width: 80vw;
+    margin: auto;
+}
+
+
+/* ========================= NAVIGATION BAR ========================= */
+
+nav{
+    font-size: 20px; 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #051f2e;
+    padding: 10px 10%;
+}
+
+.brand{
+    color: white!important;
+    text-decoration: none;
+}
+
+.navLink{
+    padding: 0px 10px;
+    color: white;
+    text-decoration: none;
+}
+
+/* ========================= HOME ========================= */
+#home{
+    /* background: #051f2e; */
+    height: 100vh;
+    box-sizing: border-box;
+    padding-top: 200px;
+}
+
+#welcomeBox{
+    width: fit-content;
+    height: 200px;
+    margin: auto;
+    /* border: 1px solid black; */
+    padding: 0px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: #051f2e;
+}
+
+.heading1{
+    color: #ffffff;
+}
+
+#navigate a{
+    padding: 5px 15px;
+    text-decoration: none;
+    color: #051f2e;
+    background: #a2c4fd;
+    border-radius: 5px;
+    font-size: 24px;
+}
+
+#navigate{
+    margin-top: 25px;
+    display: flex;
+    justify-content: space-around;
+}
+
+
+/* ======================== Sign-up ======================== */
+
+
+/* ======================== Login ======================== */
+
+
+/* ======================= Notes page ======================= */
