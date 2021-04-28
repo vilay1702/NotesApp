@@ -1,4 +1,4 @@
-<?php require 'partials/base.php'; ?>
+<?php require 'partials/_dbConnect.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,18 +10,17 @@
 
     <!-- ======== Linking Fonts ======== -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital@0;1&family=Source+Code+Pro&family=Ubuntu&display=swap" rel="stylesheet">
-    <style>
-        body{
-            background-color: #051f2e;
-        }
-        #home{
-            background-color: #051f2e;
-        }
-    </style>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital@0;1&family=Source+Code+Pro&family=Ubuntu&display=swap"
+        rel="stylesheet">
+
+    <!-- ======== Linking CSS ======== -->
+    <link rel="stylesheet" href="partials/style.css">
+
 </head>
 
 <body>
+    <?php include "partials/_navbar.php"; ?>
     <div class="container" id="home">
         <div id="welcomeBox">
             <h1 class="heading1"> Welcome to my website </h1>

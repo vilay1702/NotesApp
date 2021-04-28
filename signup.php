@@ -1,5 +1,5 @@
 <?php
-require "partials/base.php";
+require "partials/_dbConnect.php";
 
 
 if($_SERVER["REQUEST_METHOD"] == "POST"){
@@ -20,12 +20,12 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     //     echo "<script> alert('Names not selected'); </script>";
     // }
     if (mysqli_num_rows($getNamesResult)>0){
-        echo "<script> alert('Username not available'); </script>";
+        echo "<script> alert('Username not available');</script>";
     }
 
     // Match Passwords
     elseif($password != $cPassword){
-        echo "<script> alert('Passwords not match'); </script>";
+        echo "<script> alert('Passwords not match');</script>";
     }
 
     else{
@@ -33,7 +33,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         $insertSignup = "INSERT INTO `useraccount`(`name`, `email`, `password`, `age`, `gender`) VALUES('$name', '$email', '$password', '$age', '$gender');";
         $insertSignupResult = mysqli_query($conn, $insertSignup);
         if(!$insertSignupResult){
-            echo "<script> alert('Error'); </script>";
+            echo "<script> alert('Error');</script>";
         }
         else {
             header("location: login.php");
@@ -52,57 +52,13 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> Website | Sign-up </title>
     <!-- <link rel="stylesheet" href="partials/style.css"> -->
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            font-family: 'Roboto', sans-serif;
-            /* font-family: 'Source Code Pro', monospace;
-            font-family: 'Ubuntu', sans-serif; */
-        }
-
-        .signupForm {
-            min-width: 300px;
-            width: 50vw;
-            box-sizing: border-box;
-            padding: 30px;
-            margin: 100px auto;
-            display: flex;
-            flex-direction: column;
-            font-size: 20px;
-            /* background-color: #051f2e; */
-            color: #ffffff;
-        }
-
-        body{
-            background-color: #051f2e;
-        }
-
-        .signupForm input{
-            height: 30px;
-            margin: 5px 0px 20px 0px;
-            padding: 3px 10px;
-        }
-
-        .heading1{
-            margin-bottom: 20px;
-            text-decoration: underline;
-        }
-
-        .signupForm button{
-            width: 100px;
-            height: 40px;
-            font-size: 20px;
-            border: 0px solid black;
-            border-radius: 10px;
-            background-color: #a2c4fd;
-            color: #123444;
-            cursor: pointer;
-        }  
-    </style>
+    <link rel="stylesheet" href="partials/style.css">
 </head>
 
 <body>
+
+    <?php include "partials/_navbar.php"; ?>
+
     <form class="signupForm" action="signup.php" method="post">
         <h1 class="heading1"> Sign-up to continue </h1>
 
